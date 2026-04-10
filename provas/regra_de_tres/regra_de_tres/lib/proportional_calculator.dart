@@ -48,29 +48,67 @@ class _ProportionalCalculatorState extends State<ProportionalCalculator> {
               Column(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  InputCalcValue(controller: _valueAController, writable: true, hint: "Value"),
-                  SizedBox(height: 48,),
-                  InputCalcValue(controller: _valueCController, writable: true, hint: "Value"),
+                  InputCalcValue(
+                    controller: _valueAController,
+                    writable: true,
+                    hint: "Value",
+                  ),
+                  SizedBox(height: 48),
+                  InputCalcValue(
+                    controller: _valueCController,
+                    writable: true,
+                    hint: "Value",
+                  ),
                 ],
               ),
               SizedBox(width: 32),
               Column(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  SizedBox(height: 48, child: Text("está para")),
-                  SizedBox(height: 48, child: Text("assim como", style: TextStyle(fontWeight: FontWeight.bold))),
-                  SizedBox(height: 48, child: Text("está para"))
+                  SizedBox(
+                    height: 48,
+                    child: Center(
+                      child: Text(
+                        "está para",
+                      ),
+                    ),
+                  ),
+                  SizedBox(
+                    height: 48,
+                    child: Center(
+                      child: Text(
+                        "assim como",
+                        style: TextStyle(fontWeight: FontWeight.bold),
+                      ),
+                    ),
+                  ),
+                  SizedBox(
+                    height: 48,
+                    child: Center(
+                      child: Text(
+                        "está para",
+                      ),
+                    ),
+                  ),
                 ],
               ),
               SizedBox(width: 32),
               Column(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  InputCalcValue(controller: _valueBController, writable: true, hint: "Value"),
-                  SizedBox(height: 48,), 
-                  InputCalcValue(controller: _valueXController, writable: false, hint: "X",)
-                ]
-              )
+                  InputCalcValue(
+                    controller: _valueBController,
+                    writable: true,
+                    hint: "Value",
+                  ),
+                  SizedBox(height: 48),
+                  InputCalcValue(
+                    controller: _valueXController,
+                    writable: false,
+                    hint: "X",
+                  ),
+                ],
+              ),
             ],
           ),
         ),
@@ -83,10 +121,11 @@ class _ProportionalCalculatorState extends State<ProportionalCalculator> {
               onPressed: () {
                 _performOperation(Operation.ruleOfThree);
               },
-              child: Text(
-                "Calcular X",
-                style: TextStyle(fontSize: 20),
+              style: ElevatedButton.styleFrom(
+                backgroundColor: Theme.of(context).primaryColor,
+                foregroundColor: Theme.of(context).colorScheme.inversePrimary,
               ),
+              child: Text("Calcular X", style: TextStyle(fontSize: 20)),
             ),
           ],
         ),
@@ -109,7 +148,12 @@ class InputCalcValue extends StatelessWidget {
   final bool writable;
   final String hint;
 
-  const InputCalcValue({super.key, required this.controller, required this.writable, required this.hint});
+  const InputCalcValue({
+    super.key,
+    required this.controller,
+    required this.writable,
+    required this.hint,
+  });
 
   @override
   Widget build(BuildContext context) {

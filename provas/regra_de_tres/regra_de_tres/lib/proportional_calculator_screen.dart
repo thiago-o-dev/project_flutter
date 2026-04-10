@@ -8,7 +8,7 @@ class ProportionalCalculatorScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Proportional Calculator - Rule of three"),
+        title: Center(child: Text("Calculadora Propocional - Regra de Três")),
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
       ),
 

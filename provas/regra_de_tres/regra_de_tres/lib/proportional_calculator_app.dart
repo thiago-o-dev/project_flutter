@@ -7,7 +7,7 @@ class ProportionalCalculatorApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: "Proportional Calculator",
+      title: "Calculadora Propocional",
       home: ProportionalCalculatorScreen(),
       debugShowCheckedModeBanner: false,
     );
